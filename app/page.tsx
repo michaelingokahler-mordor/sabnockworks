@@ -55,23 +55,13 @@ export default function Home() {
             Strange routes and fallen worlds.
           </h1>
           <p className="hero-intro">
-            Sabnock Works makes games, roleplaying material, and short fiction
+            Sabnock Works on games, roleplaying material, and short fiction
             for people who still keep a map folded in their pocket.
           </p>
           <a className="button button-primary" href="#works">Explore the works <span aria-hidden="true">&#8595;</span></a>
         </div>
-        <img className="hero-seal" src="/media/sabnock-seal-cutout.png" alt="Sabnock Works brass maker's seal" />
+        <img className="hero-seal" src="/media/sabnock-seal-alpha.png" alt="Sabnock Works brass maker's seal" />
         <p className="hero-note">Scroll for the cabinet of curious things</p>
-      </section>
-
-      <section className="intro-band" aria-label="Studio statement">
-        <p className="section-kicker">A studio with dust under its nails</p>
-        <p>
-          Sabnock is a name with a dark timbre: a powerful demon, a builder of
-          fortresses. <strong>Works</strong> is the other half of the spell.
-          We are drawn to strange machinery, rulebooks with margins full of
-          notes, and worlds that reward a second look.
-        </p>
       </section>
 
       <section className="works-section" id="works">
