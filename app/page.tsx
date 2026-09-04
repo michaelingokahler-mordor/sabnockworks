@@ -1,10 +1,13 @@
+const sitePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const mediaUrl = (fileName: string) => `${sitePath}/media/${fileName}`;
+
 const workItems = [
   {
     number: '01',
     title: 'Lathmar: The Fallen Depths',
     kind: 'Dark fantasy roleplaying game',
     text: 'A living underworld of bargains, old wounds, and cities built over things that never truly died. Lathmar is a roleplaying game about entering the dark with a lantern, a party, and no certainty of return.',
-    image: '/media/lathmar.jpg',
+    image: mediaUrl('lathmar.jpg'),
     tone: 'lathmar',
   },
   {
@@ -12,7 +15,7 @@ const workItems = [
     title: 'War of the Wizards',
     kind: 'A Chaos remake in 8-bit spirit',
     text: 'A small screen. A hostile kingdom. A duel of summoners where one good spell can change the whole map. War of the Wizards revisits old-school tactical fantasy with sharp pixels and crooked magic.',
-    image: '/media/wizards-poster.png',
+    image: mediaUrl('wizards-poster.png'),
     tone: 'wizards',
   },
   {
@@ -20,7 +23,7 @@ const workItems = [
     title: 'Routes of Africa',
     kind: 'Historical expedition strategy',
     text: 'Plan a scientific expedition through nineteenth-century North and Central Africa. Follow routes, negotiate, listen, document, and return with records that can be tested. The world is not unknown; it is only missing from one map.',
-    image: '/media/north-africa.jfif',
+    image: mediaUrl('north-africa.jfif'),
     tone: 'africa',
   },
 ];
@@ -37,14 +40,14 @@ export default function Home() {
           <a href="#works">Works</a>
           <a href="#tabletop">Tabletop</a>
           <a href="#stories">Stories</a>
-          <a href="/imprint">Imprint</a>
+          <a href={`${sitePath}/imprint/`}>Imprint</a>
         </nav>
         <a className="header-link" href="#works">Enter the archive</a>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-art" aria-hidden="true">
-          <img src="/media/lathmar.jpg" alt="" />
+          <img src={mediaUrl('lathmar.jpg')} alt="" />
         </div>
         <div className="hero-grain" aria-hidden="true" />
         <div className="hero-copy">
@@ -60,7 +63,7 @@ export default function Home() {
           </p>
           <a className="button button-primary" href="#works">Explore the works <span aria-hidden="true">&#8595;</span></a>
         </div>
-        <img className="hero-seal" src="/media/sabnock-seal-alpha.png" alt="Sabnock Works brass maker's seal" />
+        <img className="hero-seal" src={mediaUrl('sabnock-seal-alpha.png')} alt="Sabnock Works brass maker's seal" />
         <p className="hero-note">Scroll for the cabinet of curious things</p>
       </section>
 
@@ -84,8 +87,8 @@ export default function Home() {
                 <img className="work-image" src={work.image} alt="" />
                 {work.tone === 'wizards' && (
                   <>
-                    <img className="sprite sprite-red" src="/media/red-dragon.png" alt="" />
-                    <img className="sprite sprite-hydra" src="/media/hydra.png" alt="" />
+                    <img className="sprite sprite-red" src={mediaUrl('red-dragon.png')} alt="" />
+                    <img className="sprite sprite-hydra" src={mediaUrl('hydra.png')} alt="" />
                   </>
                 )}
                 <span className="image-label">{work.tone === 'africa' ? 'Field map / North Africa' : 'From the workshop archive'}</span>
@@ -130,7 +133,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-mark"><span>S</span><p>Sabnock Works<br />Independent Game Studio</p></div>
-        <a className="footer-imprint-link" href="/imprint">Imprint</a>
+        <a className="footer-imprint-link" href={`${sitePath}/imprint/`}>Imprint</a>
         <p className="footer-end">Old souls. New tools.<br />Keep the lantern lit.</p>
       </footer>
     </main>
