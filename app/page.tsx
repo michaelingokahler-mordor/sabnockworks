@@ -37,7 +37,7 @@ export default function Home() {
           <a href="#works">Works</a>
           <a href="#tabletop">Tabletop</a>
           <a href="#stories">Stories</a>
-          <a href="#imprint">Imprint</a>
+          <a href="/imprint">Imprint</a>
         </nav>
         <a className="header-link" href="#works">Enter the archive</a>
       </header>
@@ -60,13 +60,7 @@ export default function Home() {
           </p>
           <a className="button button-primary" href="#works">Explore the works <span aria-hidden="true">&#8595;</span></a>
         </div>
-        <div className="makers-plate">
-          <p>Mark of the workshop</p>
-          <div className="seal-wrap">
-            <img src="/media/sabnock-seal.jfif" alt="Sabnock Works brass maker's seal" />
-          </div>
-          <span>Founded in the old ways</span>
-        </div>
+        <img className="hero-seal" src="/media/sabnock-seal-cutout.png" alt="Sabnock Works brass maker's seal" />
         <p className="hero-note">Scroll for the cabinet of curious things</p>
       </section>
 
@@ -144,12 +138,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer id="imprint">
+      <footer>
         <div className="footer-mark"><span>S</span><p>Sabnock Works<br />Independent Game Studio</p></div>
-        <div className="imprint">
-          <p className="eyebrow">Imprint</p>
-          <address>Michael Kahler<br />Sabnock Works<br />Kattrepel 7<br />27404 Zeven<br />Germany</address>
-        </div>
+        <a className="footer-imprint-link" href="/imprint">Imprint</a>
         <p className="footer-end">Old souls. New tools.<br />Keep the lantern lit.</p>
       </footer>
     </main>
