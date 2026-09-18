@@ -1,0 +1,34 @@
+# Sabnock Works
+
+> Sabnock Works is an independent game studio creating dark fantasy dungeon crawlers, historical strategy games, free d20 tabletop material, essays, and fiction.
+
+Canonical site: https://sabnockworks.com/
+Language: English
+Publisher: Sabnock Works, Germany
+
+## Games
+
+- [Sabnock Works](https://sabnockworks.com/): Studio overview featuring Lathmar: The Fallen Depths, War of the Wizards, and Routes of Africa.
+- [Lathmar: The Fallen Depths](https://lathmar.de/): A dark fantasy dungeon crawler inspired by classic 1990s roleplaying games.
+- [Routes of Africa](https://sabnockworks.com/games/routes-of-africa/): A historical expedition strategy game about exploration, route planning, documentation, and resource management in 19th-century North and Central Africa.
+
+## Tabletop Roleplaying Material
+
+- [Free d20 adventures and dungeon material](https://sabnockworks.com/tabletop/): Fifth-edition-compatible mythic weapons plus dungeon campaign material for d20 and Lathmar, including the Ancient Mega-Dungeons collection.
+
+## Essays
+
+- [Essays archive](https://sabnockworks.com/articles/): Long-form writing on mythology, legendary weapons, ancient mega-dungeons, game design, and storytelling.
+- [Mythic Spears](https://sabnockworks.com/articles/mythic-spears/): Six essays by Michael Kahler about mythology, power, sacrifice, and legendary weapons.
+
+## Dark Fantasy Fiction
+
+- [Stories archive](https://sabnockworks.com/stories/): Free dark fantasy stories and novellas from the fallen world of Lathmar.
+- [The Tithe of Small Despairs](https://sabnockworks.com/stories/tithe-of-small-despairs/): A dark fantasy story by Michael Kahler.
+- [The Rat King](https://sabnockworks.com/stories/the-rat-king/): A dark fantasy novella by Michael Kahler.
+- [The Price of a Crown](https://sabnockworks.com/stories/the-price-of-a-crown/): A dark fantasy novella by Michael Kahler.
+
+## Site Information
+
+- [Imprint and privacy](https://sabnockworks.com/imprint.html)
+- [XML sitemap](https://sabnockworks.com/sitemap.xml)
