@@ -12,6 +12,8 @@ Publisher: Sabnock Works, Germany
 - [Lathmar: The Fallen Depths](https://lathmar.de/): A dark fantasy dungeon crawler inspired by classic 1990s roleplaying games.
 - [War of the Wizards](https://sabnockworks.com/games/war-of-the-wizards/): Turn-based fantasy tactics inspired by Julian Gollop's Chaos, with 73 spells, creature summoning, illusion bluffs, a Windows demo and gameplay videos.
 - [Routes of Africa](https://sabnockworks.com/games/routes-of-africa/): A historical expedition strategy game about exploration, route planning, documentation, and resource management in 19th-century North and Central Africa.
+- [More Projects](https://sabnockworks.com/games/more-projects/): A collection of other Sabnock Works games, starting with Velvet Cruise.
+- [Velvet Cruise](https://sabnockworks.com/games/more-projects/#velvet-cruise): A pixel-art arcade driving game with a playable online demo, Windows and macOS demo downloads, screenshots and keyboard controls.
 
 ## Tabletop Roleplaying Material
 

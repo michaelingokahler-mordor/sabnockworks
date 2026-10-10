@@ -101,6 +101,41 @@ footer { align-items: end; background: #0a0c0b; border-top: 1px solid rgba(227,1
 @media (max-width: 760px) { .support-section { grid-template-columns: 1fr; width: calc(100% - 2.8rem); } }
 @media (max-width: 840px) { .footer-links { align-items: flex-start; } }
 
+/* More projects collection */
+.works-more { align-items: center; display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; margin-top: 2.5rem; }
+.works-more p { color: #b7ae96; font-size: 1.05rem; line-height: 1.6; margin: 0; }
+.works-more a { border-bottom: 1px solid rgba(227,189,115,.62); color: var(--brass-light); font-family: "Courier New", monospace; font-size: .75rem; font-weight: 700; letter-spacing: .09em; padding: .8rem 0; text-decoration: none; text-transform: uppercase; }
+.works-more a:hover { color: var(--paper-light); }
+.more-projects-page { min-width: 0; }
+.more-projects-page .archive-hero h1 { max-width: none; }
+.more-projects-list { margin: 0 auto; max-width: 1140px; padding-bottom: clamp(4rem,8vw,7rem); width: 90vw; }
+.more-project { border-top: 1px solid rgba(227,189,115,.28); padding-top: clamp(2.5rem,5vw,4rem); scroll-margin-top: 2rem; }
+.more-project + .more-project { margin-top: clamp(3.5rem,7vw,6rem); }
+.more-project-feature { align-items: start; display: grid; gap: clamp(2rem,4vw,4rem); grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); }
+.more-project-cover { background: #0a0c0b; box-shadow: 16px 18px 0 rgba(185,141,71,.1); margin: 0; }
+.more-project-cover img,.more-project-gallery img { display: block; height: auto; width: 100%; }
+.more-project-cover figcaption,.more-project-gallery figcaption { color: #b7ae96; font-family: "Courier New", monospace; font-size: .62rem; letter-spacing: .07em; line-height: 1.6; padding: .8rem 1rem; text-transform: uppercase; }
+.more-project-copy h2 { font-size: clamp(2.6rem,5vw,4.5rem); font-weight: 400; letter-spacing: -.055em; line-height: .95; margin: 0; }
+.more-project-copy > p:not(.eyebrow) { color: #d0c9b6; font-size: 1.05rem; line-height: 1.65; margin: 1.25rem 0; }
+.more-project-copy > .more-project-deck { color: var(--brass-light); font-size: 1.2rem; font-style: italic; }
+.more-project-copy strong { color: var(--paper-light); font-weight: 400; }
+.more-project-actions { margin-top: 1.8rem; }
+.more-project-downloads { display: flex; flex-wrap: wrap; gap: .3rem 1.5rem; margin-top: .6rem; }
+.more-project-downloads a { align-items: center; color: var(--brass-light); display: inline-flex; font-family: "Courier New", monospace; font-size: .75rem; gap: .5rem; line-height: 1.5; min-height: 44px; text-underline-offset: .3em; }
+.more-project-controls { border-top: 1px solid rgba(227,189,115,.22); margin-top: 1.5rem; padding-top: 1.5rem; }
+.more-project-controls h3 { color: #b7ae96; font-family: "Courier New", monospace; font-size: .66rem; font-weight: 400; letter-spacing: .1em; margin: 0 0 1rem; text-transform: uppercase; }
+.more-project-controls dl { display: grid; gap: .9rem 1.5rem; grid-template-columns: repeat(2,minmax(0,1fr)); margin: 0; }
+.more-project-controls dl > div { align-items: center; display: flex; gap: .7rem; }
+.more-project-controls dt { flex-shrink: 0; }
+.more-project-controls dd { color: #d0c9b6; font-size: .95rem; margin: 0; }
+.more-project-controls kbd { background: rgba(227,189,115,.08); border: 1px solid rgba(227,189,115,.3); border-radius: 3px; color: var(--paper-light); display: inline-block; font-family: "Courier New", monospace; font-size: .8rem; line-height: 1.4; padding: .25rem .4rem; }
+.more-project-gallery { display: grid; gap: 2rem; grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: clamp(2.5rem,5vw,4rem); }
+.more-project-gallery figure { background: #0a0c0b; margin: 0; }
+.more-project-gallery a { display: block; }
+.more-projects-page a:focus-visible,.works-more a:focus-visible { outline: 2px solid var(--brass-light); outline-offset: 4px; }
+@media (max-width: 840px) { .more-projects-list { width: calc(100% - 2.8rem); }.more-project-feature { grid-template-columns: 1fr; }.more-project-gallery { gap: 1.5rem; grid-template-columns: 1fr; } }
+@media (max-width: 380px) { .more-project-controls dl { grid-template-columns: 1fr; } }
+
 /* Shared main navigation */
 .site-header nav[aria-label="Main navigation"] {
   flex-wrap: wrap;
