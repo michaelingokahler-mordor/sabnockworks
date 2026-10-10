@@ -10,6 +10,7 @@ Publisher: Sabnock Works, Germany
 
 - [Sabnock Works](https://sabnockworks.com/): Studio overview featuring Lathmar: The Fallen Depths, War of the Wizards, and Routes of Africa.
 - [Lathmar: The Fallen Depths](https://lathmar.de/): A dark fantasy dungeon crawler inspired by classic 1990s roleplaying games.
+- [War of the Wizards](https://sabnockworks.com/games/war-of-the-wizards/): Turn-based fantasy tactics inspired by Julian Gollop's Chaos, with 73 spells, creature summoning, illusion bluffs, a Windows demo and gameplay videos.
 - [Routes of Africa](https://sabnockworks.com/games/routes-of-africa/): A historical expedition strategy game about exploration, route planning, documentation, and resource management in 19th-century North and Central Africa.
 
 ## Tabletop Roleplaying Material
