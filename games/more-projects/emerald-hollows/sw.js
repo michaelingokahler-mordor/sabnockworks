@@ -1,0 +1,8 @@
+const CACHE='emerald-hollows-45b3a6f27603368b';
+const FILES=["assets/death.ogg","assets/diamond.ogg","assets/dig.ogg","assets/digging.png","assets/emerald.ogg","assets/hero.png","assets/impact.ogg","assets/index-CPd1ydUx.css","assets/index-ZUeMnE0q.js","assets/music-brisk.ogg","assets/music-calm.ogg","assets/music.ogg","assets/open.ogg","assets/push.ogg","assets/tiles.json","assets/tiles.png","assets/title-b1s-BYoF.webp","assets/title.webp","assets/win.ogg","favicon.svg","icons/icon-192.png","icons/icon-512.png","index.html","manifest.webmanifest","replays/01.json","replays/02.json","replays/03.json","replays/04.json","replays/05.json","replays/06.json","replays/07.json","replays/08.json","replays/09.json","replays/10.json"];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES.map(f=>new URL(f,self.registration.scope).href)))));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const k of await caches.keys())if(k.startsWith('emerald-hollows-')&&k!==CACHE)await caches.delete(k);await self.clients.claim();})()));
+self.addEventListener('fetch',event=>{
+ const u=new URL(event.request.url);if(event.request.method!=='GET'||u.origin!==self.location.origin||!u.href.startsWith(self.registration.scope)||u.pathname.endsWith('/online.json'))return;
+ event.respondWith((async()=>{const cached=await (await caches.open(CACHE)).match(event.request,{ignoreVary:true});if(cached)return cached;try{return await fetch(event.request);}catch(error){if(event.request.mode==='navigate'){const home=await (await caches.open(CACHE)).match(new URL('index.html',self.registration.scope),{ignoreVary:true});if(home)return home;}throw error;}})());
+});
