@@ -1,0 +1,10 @@
+.wizards-availability {
+  border-left: 1px solid var(--brass-light, #e3bd73);
+  margin: 1.8rem 0;
+  padding-left: 1rem;
+  line-height: 1.65;
+}
+.wizards-availability a {
+  color: var(--brass-light, #e3bd73);
+  text-underline-offset: .2em;
+}

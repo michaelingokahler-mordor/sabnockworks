@@ -11,6 +11,22 @@ Static website for Sabnock Works.
 
 GitHub Pages publishes the root of the `main` branch directly. No Node.js, build process, or deployment workflow is required.
 
+## War of the Wizards web edition
+
+The full Godot browser edition lives at `games/war-of-the-wizards/play/`.
+The game page links to it with **Play online**. Both pages show
+**Free to play while in development.** and **Feedback appreciated.**
+The feedback link opens an email with the subject `War of the Wizards feedback`.
+The browser edition has no ten-round demo limit. The separate Windows demo
+retains its own ten-round limit.
+
+Copy the reviewed web deployment from the game repository's
+`builds/web/deployment/` directory. Preserve the exported file names and keep
+the `.wasm`, `.pck`, JavaScript, audio worklets and license files together.
+The build uses Godot 4.5.1 Compatibility rendering without threads, so it does
+not require cross-origin isolation headers. The web export's existing checks
+are documented in the game repository.
+
 ## Update Velvet Cruise
 
 The playable web edition lives at `games/more-projects/velvet-cruise/`.

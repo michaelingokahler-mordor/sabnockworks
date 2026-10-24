@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Play the full War of the Wizards in your browser. Free to play while in development. Feedback appreciated.">
+  <title>Play War of the Wizards | Sabnock Works</title>
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: dark; --gold: #e3bd73; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: #0e110e; color: #f1e8d2; }
+    body { font-family: Georgia, serif; display: flex; flex-direction: column; }
+    a { color: var(--gold); text-underline-offset: .22em; }
+    header { flex: none; min-height: 62px; padding: 10px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; border-bottom: 1px solid #554a32; }
+    .brand { font-size: 17px; text-decoration: none; }
+    .availability { font-size: 14px; line-height: 1.5; }
+    .tools { display: flex; gap: 18px; align-items: center; }
+    button { cursor: pointer; background: var(--gold); color: #171a14; font: bold 13px Georgia, serif; border: 1px solid var(--gold); padding: 12px 20px; }
+    button:disabled { cursor: wait; opacity: .6; }
+    button:focus-visible, a:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+    #stage { flex: 1; min-height: 0; position: relative; background: #000; overflow: hidden; }
+    #stage:fullscreen { width: 100vw; height: 100vh; }
+    #canvas { display: block; width: 100%; height: 100%; outline: none; touch-action: none; }
+    #welcome { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(#0009, #000c), url('poster.webp') center/cover; padding: 24px; overflow: auto; }
+    #welcome[hidden] { display: none; }
+    .card { width: min(100%, 560px); background: #101510ee; border: 1px solid #8e794c; padding: clamp(24px, 5vw, 44px); text-align: center; }
+    h1 { margin: 0 0 20px; font-size: clamp(29px, 5vw, 42px); font-weight: normal; }
+    .card p { line-height: 1.6; }
+    .card .availability { margin: 24px 0; border-left: 1px solid var(--gold); padding-left: 16px; text-align: left; }
+    #progress { display: block; width: 100%; accent-color: var(--gold); margin: 18px 0 10px; }
+    #progress[hidden] { display: none; }
+    #status { min-height: 1.5em; font: 13px/1.5 Arial, sans-serif; color: #d0c8b3; }
+    #retry { display: none; }
+    #retry.visible { display: inline-block; margin-top: 12px; }
+    .hint { font: 12px/1.5 Arial, sans-serif; color: #bbb9aa; }
+    footer { padding: 5px 12px; flex: none; font: 12px/1.4 Arial, sans-serif; text-align: center; color: #bbb9aa; }
+    @media (max-width: 700px) { header { padding: 8px 12px; } header .availability { display: none; } .brand { font-size: 14px; } button { padding: 10px 14px; } }
+  </style>
+  <link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+</head>
+<body>
+  <header>
+    <a class="brand" href="../">Sabnock Works / War of the Wizards</a>
+    <span class="availability">Free to play while in development.</span>
+    <div class="tools">
+      <a href="mailto:Lathmar@t-online.de?subject=War%20of%20the%20Wizards%20feedback">Feedback appreciated.</a>
+      <button id="fullscreen" type="button">Fullscreen</button>
+    </div>
+  </header>
+  <main id="stage">
+    <canvas id="canvas" tabindex="0" aria-label="War of the Wizards game. Use your mouse and keyboard; How to play is available in the game."></canvas>
+    <section id="welcome" aria-labelledby="game-title">
+      <div class="card">
+        <h1 id="game-title">War of the Wizards</h1>
+        <p>Command your wizard. Summon creatures.<br>Call an illusion, or face a very real dragon.</p>
+        <p class="availability"><strong>Free to play while in development.</strong><br><a href="mailto:Lathmar@t-online.de?subject=War%20of%20the%20Wizards%20feedback">Feedback appreciated.</a></p>
+        <button id="play" type="button">Play now</button>
+        <progress id="progress" hidden aria-label="Game download"></progress>
+        <p id="status" role="status" aria-live="polite">Full game · 2–8 wizards · AI or local shared-screen play</p>
+        <a id="retry" href="">Reload and try again</a>
+        <p class="hint">Desktop mouse and keyboard recommended.<br>Click or press a key in the game to enable audio.<br>Closing or reloading the page ends your match.</p>
+        <noscript>Enable JavaScript to play this game.</noscript>
+      </div>
+    </section>
+  </main>
+  <footer>Left click: select / act · Right click your wizard or S: spellbook · D: dismount · Esc: cancel</footer>
+  <script src="index.js"></script>
+  <script>
+    'use strict';
+    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":23711672,"index.wasm":38034280},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+    const stage = document.getElementById('stage');
+    const canvas = document.getElementById('canvas');
+    const welcome = document.getElementById('welcome');
+    const play = document.getElementById('play');
+    const progress = document.getElementById('progress');
+    const status = document.getElementById('status');
+    let running = false;
+
+    function fitCanvas() {
+      const width = Math.round(stage.clientWidth * window.devicePixelRatio);
+      const height = Math.round(stage.clientHeight * window.devicePixelRatio);
+      if (canvas.width !== width) canvas.width = width;
+      if (canvas.height !== height) canvas.height = height;
+    }
+    fitCanvas();
+    // Keep the engine inside the space below the website toolbar, including
+    // fullscreen. Adaptive mode sizes to the whole window instead of this area.
+    const engine = new Engine(config);
+    const sizeObserver = new ResizeObserver(fitCanvas);
+    sizeObserver.observe(stage);
+    canvas.addEventListener('contextmenu', event => event.preventDefault());
+    document.getElementById('fullscreen').addEventListener('click', async () => {
+      try {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else await stage.requestFullscreen();
+        canvas.focus();
+      } catch (_) {
+        status.textContent = 'Fullscreen is unavailable in this browser. You can keep playing in this window.';
+      }
+    });
+    play.addEventListener('click', async () => {
+      play.disabled = true;
+      const missing = Engine.getMissingFeatures({ threads: false });
+      if (missing.length) {
+        status.textContent = 'This browser cannot run the game: ' + missing.join(', ') + '. Try a current desktop browser with WebGL 2 enabled.';
+        return;
+      }
+      progress.hidden = false;
+      status.textContent = 'Downloading the game. The first visit takes longer.';
+      try {
+        await engine.startGame({
+          canvas,
+          canvasResizePolicy: 0,
+          onProgress(current, total) {
+            if (total > 0) {
+              progress.max = total;
+              progress.value = current;
+              status.textContent = 'Loading game · ' + Math.floor(current / total * 100) + '%';
+            }
+          },
+          onExit() {
+            running = false;
+            welcome.hidden = false;
+            status.textContent = 'The game has ended. Reload to play again.';
+            document.getElementById('retry').classList.add('visible');
+          }
+        });
+        running = true;
+        fitCanvas();
+        welcome.hidden = true;
+        canvas.focus();
+      } catch (error) {
+        console.error(error);
+        status.textContent = 'The game could not start. Please reload or try another desktop browser.';
+        progress.hidden = true;
+        document.getElementById('retry').classList.add('visible');
+      }
+    });
+  </script>
+</body>
+</html>
