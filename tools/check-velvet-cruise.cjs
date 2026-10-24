@@ -40,7 +40,13 @@ mkdirSync(output, { recursive: true });
     const page = await desktop.newPage();
     await page.goto(base + '/games/more-projects/' + version + '#velvet-cruise', { waitUntil: 'load' });
     const article = page.locator('#velvet-cruise');
-    assert.equal(await article.locator('.more-project-stage-gallery figure').count(), 15);
+    const gallery = article.locator('[data-screenshot-carousel]');
+    const track = gallery.locator('.screenshot-carousel-track');
+    const previous = gallery.getByRole('button', { name: 'Previous screenshots' });
+    const next = gallery.getByRole('button', { name: 'Next screenshots' });
+    assert.equal(await track.locator('figure').count(), 17);
+    assert.ok((await track.locator('figure').nth(0).textContent()).includes('The garage'));
+    assert.ok((await track.locator('figure').nth(1).textContent()).includes('The course map'));
     assert.equal(await article.locator('img').count(), 18);
     assert.ok((await article.innerText()).includes('Free to play while in development.'));
     assert.ok((await article.innerText()).includes('Feedback appreciated.'));
@@ -53,12 +59,66 @@ mkdirSync(output, { recursive: true });
     }
     for (const data of await page.locator('script[type="application/ld+json"]').allTextContents()) JSON.parse(data);
     await article.locator('.more-project-feature').screenshot({ path: output + '/desktop-section.png' });
-    await article.locator('.more-project-stage-section').screenshot({ path: output + '/stage-gallery.png' });
+    await track.evaluate(element => element.scrollTo({ left: 0, behavior: 'instant' }));
+    await page.waitForFunction(() => document.querySelector('[data-carousel-previous]').disabled);
+    const visibleCards = () => track.evaluate(element => {
+      const viewport = element.getBoundingClientRect();
+      return [...element.children].filter(slide => {
+        const box = slide.getBoundingClientRect();
+        return box.left >= viewport.left - 1 && box.right <= viewport.right + 1;
+      }).length;
+    });
+    assert.equal(await visibleCards(), 3, 'Three full screenshots on a wide desktop');
+    await next.click();
+    await page.waitForFunction(() => document.querySelector('[data-carousel-position]').textContent.startsWith('2\u2013'));
+    await previous.click();
+    await page.waitForFunction(() => document.querySelector('[data-carousel-previous]').disabled);
+    await track.focus();
+    await page.keyboard.press('End');
+    await page.waitForFunction(() => document.querySelector('[data-carousel-next]').disabled);
+    assert.equal((await gallery.locator('[data-carousel-position]').innerText()), '15\u201317 / 17');
+    assert.equal(await previous.isEnabled(), true);
+    await page.keyboard.press('Home');
+    await page.waitForFunction(() => document.querySelector('[data-carousel-previous]').disabled);
+    await page.keyboard.press('ArrowRight');
+    await page.waitForFunction(() => document.querySelector('[data-carousel-position]').textContent.startsWith('2\u2013'));
+    await page.keyboard.press('Home');
+    await page.waitForFunction(() => document.querySelector('[data-carousel-previous]').disabled);
+    await page.setViewportSize({ width: 1000, height: 1000 });
+    assert.equal(await visibleCards(), 2, 'Two full screenshots on a smaller desktop');
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await track.evaluate(element => element.blur());
+    await gallery.screenshot({ path: output + '/screenshot-carousel.png' });
     const mobile = await context({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
     const mobilePage = await mobile.newPage();
     await mobilePage.goto(base + '/games/more-projects/' + version + '#velvet-cruise', { waitUntil: 'load' });
     const overflow = await mobilePage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     assert.equal(overflow, false, 'The mobile collection must not scroll horizontally');
+    const mobileTrack = mobilePage.locator('.screenshot-carousel-track');
+    await mobileTrack.scrollIntoViewIfNeeded();
+    const swipeBox = await mobileTrack.boundingBox();
+    const swipe = await mobile.newCDPSession(mobilePage);
+    const touchY = swipeBox.y + swipeBox.height * .4;
+    await swipe.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: swipeBox.x + swipeBox.width * .85, y: touchY }] });
+    for (let i = 1; i <= 8; i++) {
+      await swipe.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: swipeBox.x + swipeBox.width * (.85 - .7 * i / 8), y: touchY }] });
+      await mobilePage.waitForTimeout(30);
+    }
+    await swipe.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await mobilePage.waitForFunction(() => {
+      const element = document.querySelector('.screenshot-carousel-track');
+      const stride = element.children[1].offsetLeft - element.children[0].offsetLeft;
+      return element.scrollLeft > 20 && Math.abs(element.scrollLeft / stride - Math.round(element.scrollLeft / stride)) < .002;
+    });
+    assert.equal(await mobileTrack.evaluate(element => {
+      const viewport = element.getBoundingClientRect();
+      return [...element.children].filter(slide => {
+        const box = slide.getBoundingClientRect();
+        return box.left >= viewport.left - 1 && box.right <= viewport.right + 1;
+      }).length;
+    }), 1, 'Touch scrolling must settle on one complete mobile screenshot');
+    assert.equal(await mobilePage.getByRole('button', { name: 'Previous screenshots' }).isEnabled(), true);
+    await mobilePage.locator('[data-screenshot-carousel]').screenshot({ path: output + '/touch-carousel.png' });
     await mobilePage.screenshot({ path: output + '/mobile-section.png', fullPage: true });
 
     gamePage = page;
@@ -98,7 +158,7 @@ mkdirSync(output, { recursive: true });
     assert.deepEqual(errors, []);
     assert.deepEqual(failures, []);
     assert.deepEqual(gameExternal, [], 'The game must be served entirely by this website');
-    const result = { galleryImages: 18, stages: 15, mobileOverflow: overflow, playDestination: new URL(page.url()).pathname, before, after, touchRace, errors, failures, gameExternal };
+    const result = { galleryImages: 18, carouselImages: 17, desktopVisible: 3, smallerDesktopVisible: 2, carouselArrows: true, carouselKeyboard: true, carouselSwipe: true, stages: 15, mobileOverflow: overflow, playDestination: new URL(page.url()).pathname, before, after, touchRace, errors, failures, gameExternal };
     writeFileSync(output + '/result.json', JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result, null, 2));
   } finally {
