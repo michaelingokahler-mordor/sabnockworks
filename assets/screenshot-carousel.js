@@ -7,7 +7,7 @@ document.querySelectorAll('[data-screenshot-carousel]').forEach(carousel => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function step() {
-    return slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+    return slides.length > 1 ? slides[1].getBoundingClientRect().left - slides[0].getBoundingClientRect().left : track.clientWidth;
   }
 
   function update() {

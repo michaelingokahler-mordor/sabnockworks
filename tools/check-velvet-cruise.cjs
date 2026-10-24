@@ -107,8 +107,11 @@ mkdirSync(output, { recursive: true });
     await swipe.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
     await mobilePage.waitForFunction(() => {
       const element = document.querySelector('.screenshot-carousel-track');
-      const stride = element.children[1].offsetLeft - element.children[0].offsetLeft;
-      return element.scrollLeft > 20 && Math.abs(element.scrollLeft / stride - Math.round(element.scrollLeft / stride)) < .002;
+      const viewport = element.getBoundingClientRect();
+      return element.scrollLeft > 20 && [...element.children].some(slide => {
+        const box = slide.getBoundingClientRect();
+        return box.left >= viewport.left - 1 && box.right <= viewport.right + 1;
+      });
     });
     assert.equal(await mobileTrack.evaluate(element => {
       const viewport = element.getBoundingClientRect();
