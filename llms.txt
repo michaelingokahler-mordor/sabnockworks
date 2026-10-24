@@ -13,7 +13,7 @@ Publisher: Sabnock Works, Germany
 - [War of the Wizards](https://sabnockworks.com/games/war-of-the-wizards/): Turn-based fantasy tactics inspired by Julian Gollop's Chaos, with 73 spells, creature summoning, illusion bluffs, a Windows demo and gameplay videos.
 - [Routes of Africa](https://sabnockworks.com/games/routes-of-africa/): A historical expedition strategy game about exploration, route planning, documentation, and resource management in 19th-century North and Central Africa.
 - [More Projects](https://sabnockworks.com/games/more-projects/): A collection of other Sabnock Works games, including Velvet Cruise and Lathmar: Emerald Hollows.
-- [Velvet Cruise](https://sabnockworks.com/games/more-projects/#velvet-cruise): A pixel-art arcade driving game with a playable online demo, Windows and macOS demo downloads, screenshots and keyboard controls.
+- [Velvet Cruise](https://sabnockworks.com/games/more-projects/velvet-cruise/): A self-hosted pixel-art arcade driving game with fifteen branching stages, five finish lines, keyboard and touch controls, and scores and badges saved in the browser. Free to play while in development. Feedback appreciated. Current screenshots of every stage appear in the More Projects section.
 
 - [Lathmar: Emerald Hollows](https://sabnockworks.com/games/more-projects/emerald-hollows/): A playable cave action-puzzle browser demo with ten handcrafted levels, keyboard and touch controls, offline installation and optional verified best times. German interface.
 
