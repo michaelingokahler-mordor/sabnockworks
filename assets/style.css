@@ -145,6 +145,11 @@ footer { align-items: end; background: #0a0c0b; border-top: 1px solid rgba(227,1
 .screenshot-carousel-arrow:focus-visible { outline: 2px solid var(--brass-light); outline-offset: 4px; }
 .screenshot-carousel-arrow:disabled { cursor: default; opacity: .25; }
 .screenshot-carousel-position { color: #b7ae96; font-family: "Courier New",monospace; font-size: .7rem; grid-column: 1 / -1; letter-spacing: .08em; margin: 0; text-align: center; }
+.more-project-videos { margin-top: clamp(2.5rem,5vw,4rem); }
+.more-project-videos h3 { color: var(--paper-light); font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 400; letter-spacing: -.03em; margin: 0 0 1.5rem; }
+.more-project-playlist { aspect-ratio: 16 / 9; border: 0; display: block; height: auto; width: 100%; }
+.more-project-videos > p { margin: 1.25rem 0 0; }
+.more-project-videos > p a { color: var(--brass-light); font-family: "Courier New",monospace; font-size: .75rem; line-height: 1.6; text-underline-offset: .3em; }
 @media (max-width: 1100px) { .more-project-gallery.screenshot-carousel-track { grid-auto-columns: calc((100% - var(--screenshot-gap)) / 2); } }
 @media (max-width: 600px) { .screenshot-carousel { column-gap: .5rem; }.more-project-gallery.screenshot-carousel-track { grid-auto-columns: 100%; } }
 #velvet-cruise img { image-rendering: pixelated; }
