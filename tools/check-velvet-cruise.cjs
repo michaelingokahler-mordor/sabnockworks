@@ -11,12 +11,21 @@ mkdirSync(output, { recursive: true });
 (async () => {
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium', headless: true, proxy: !local && process.env.HTTPS_PROXY ? { server: process.env.HTTPS_PROXY } : undefined, args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   const errors = [], failures = [], gameExternal = [];
+  const contexts = [];
   let gamePage;
   async function context(options) {
     const ctx = await browser.newContext({ locale: 'en-US', ...options });
-    await ctx.route('**/*', route => {
+    contexts.push(ctx);
+    await ctx.route('**/*', async route => {
       const url = new URL(route.request().url());
-      if (url.origin === new URL(base).origin || ['blob:', 'data:'].includes(url.protocol)) return route.continue();
+      if (['blob:', 'data:'].includes(url.protocol)) return route.continue();
+      if (url.origin === new URL(base).origin) {
+        if (local) return route.continue();
+        // Node honors the managed proxy's NODE_EXTRA_CA_CERTS trust.
+        // Keep TLS verification enabled when forwarding live browser requests.
+        const response = await route.fetch();
+        return route.fulfill({ response });
+      }
       if (route.request().frame().page() === gamePage) gameExternal.push(url.hostname);
       return route.abort('blockedbyclient');
     });
@@ -92,5 +101,8 @@ mkdirSync(output, { recursive: true });
     const result = { galleryImages: 18, stages: 15, mobileOverflow: overflow, playDestination: new URL(page.url()).pathname, before, after, touchRace, errors, failures, gameExternal };
     writeFileSync(output + '/result.json', JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result, null, 2));
-  } finally { await browser.close(); }
+  } finally {
+    for (const ctx of contexts) await ctx.unrouteAll({ behavior: 'wait' });
+    await browser.close();
+  }
 })().catch(error => { console.error(error); process.exitCode = 1; });
