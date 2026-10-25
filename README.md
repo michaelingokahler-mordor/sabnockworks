@@ -44,6 +44,16 @@ This runs the game's TypeScript and local-storage checks before building.
 The generated `build-info.json` records the source commit and entry file.
 Previous hashed JavaScript files are retained for existing browser sessions.
 
+The current full release uses game commit `b5fdd7a` and the already published
+online adapter from `80bda527`. `build-info.json` records both revisions.
+The entry page selects `releases/2026-10-25-b5fdd7a/` through a relative base URL,
+so each release loads a matching atlas, metadata and scripts. Retain older root
+assets and release folders for cached pages. Current extended-tour records use
+the existing `tour2` keys and boards; legacy local records are not deleted or
+reinterpreted as scores under the new driving rules. The basic updater above
+requires a checkout that already includes the online adapter; do not replace
+this release with a local-only build.
+
 To refresh the screenshots, run a local static server:
 
 ```bash
