@@ -1,7 +1,8 @@
 {
   "source": "michaelingokahler-mordor/Velvet-Cruise",
-  "commit": "466be890ecd3360c0064d53462c95a72f1fc386b",
+  "commit": "bb3d3abeb43baf2da59a06bec7f5b041c6247606",
   "modified": false,
   "edition": "standalone",
-  "entry": "_app/index-B7fNVMFQ.js"
+  "entry": "_app/index-gHbwC6DF.js",
+  "onlineApi": "https://velvet-cruise-api.emerald-hollows.workers.dev"
 }
