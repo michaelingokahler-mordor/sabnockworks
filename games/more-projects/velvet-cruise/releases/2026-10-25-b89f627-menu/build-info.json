@@ -1,0 +1,13 @@
+{
+  "source": "michaelingokahler-mordor/Velvet-Cruise",
+  "commit": "b89f6277f40f80d55cef69f7ccce094e7bdc0d00",
+  "onlineSourceCommit": "80bda527a2e4c4882310b8529b6f5aaf40b88991",
+  "modified": true,
+  "edition": "standalone",
+  "entry": "releases/2026-10-25-b89f627-menu/_app/index-B1iCucZt.js",
+  "onlineApi": "https://velvet-cruise-api.emerald-hollows.workers.dev",
+  "ruleset": "tour2",
+  "release": "2026-10-25-b89f627-menu",
+  "assetsBase": "releases/2026-10-25-b89f627-menu/",
+  "builtAt": "2026-10-25T15:52:29.240Z"
+}
