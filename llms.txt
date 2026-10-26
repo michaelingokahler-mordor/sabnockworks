@@ -8,14 +8,14 @@ Publisher: Sabnock Works, Germany
 
 ## Games
 
-- [Sabnock Works](https://sabnockworks.com/): Studio overview featuring Lathmar: The Fallen Depths, War of the Wizards, and Routes of Africa.
+- [Sabnock Works](https://sabnockworks.com/): Studio overview featuring Lathmar: The Fallen Depths, War of the Wizards, Routes of Africa, Velvet Cruise and Lathmar: Emerald Hollows.
 - [Lathmar: The Fallen Depths](https://lathmar.de/): A dark fantasy dungeon crawler inspired by classic 1990s roleplaying games.
 - [War of the Wizards](https://sabnockworks.com/games/war-of-the-wizards/): Turn-based fantasy tactics inspired by Julian Gollop's Chaos, with 73 spells, creature summoning and illusion bluffs. Play the full browser version free while in development; feedback appreciated. A separate Windows demo and gameplay videos are also available.
 - [Routes of Africa](https://sabnockworks.com/games/routes-of-africa/): A historical expedition strategy game about exploration, route planning, documentation, and resource management in 19th-century North and Central Africa.
 - [More Projects](https://sabnockworks.com/games/more-projects/): A collection of other Sabnock Works games, including Velvet Cruise and Lathmar: Emerald Hollows.
 - [Velvet Cruise](https://sabnockworks.com/games/more-projects/velvet-cruise/): A self-hosted pixel-art arcade driving game with fifteen branching stages, five finish lines, keyboard and touch controls, and scores and badges saved in the browser. Free to play while in development. Feedback appreciated. Current screenshots of every stage appear in the More Projects section.
 
-- [Lathmar: Emerald Hollows](https://sabnockworks.com/games/more-projects/emerald-hollows/): A playable cave action-puzzle browser demo with ten handcrafted levels, keyboard and touch controls, offline installation and optional verified best times. German interface.
+- [Lathmar: Emerald Hollows](https://sabnockworks.com/games/more-projects/emerald-hollows/): A cave action-puzzle browser game with fifty caves, keyboard and touch controls, and English and German text. Free to play while in development.
 
 ## Tabletop Roleplaying Material
 
@@ -25,6 +25,8 @@ Publisher: Sabnock Works, Germany
 
 - [Essays archive](https://sabnockworks.com/articles/): Long-form writing on mythology, legendary weapons, ancient mega-dungeons, game design, and storytelling.
 - [Mythic Spears](https://sabnockworks.com/articles/mythic-spears/): Six essays by Michael Kahler about mythology, power, sacrifice, and legendary weapons.
+- [Ancient Mega Dungeons](https://sabnockworks.com/articles/ancient-mega-dungeons/): Complete illustrated reading edition of five essays on ancient labyrinths, sacred mountains, underground cities and sealed tombs, with sources and lessons for RPG design. PDF download available.
+- [Heinrich Barth: The Scholar Who Crossed Kingdoms](https://sabnockworks.com/articles/heinrich-barth/): Complete reading edition about Barth's life, journeys, collaborators and legacy, and the historical foundations of Routes of Africa. PDF download available.
 
 ## Dark Fantasy Fiction
 
