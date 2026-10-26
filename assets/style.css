@@ -111,6 +111,20 @@ footer { align-items: end; background: #0a0c0b; border-top: 1px solid rgba(227,1
 .works-more p { color: #b7ae96; font-size: 1.05rem; line-height: 1.6; margin: 0; }
 .works-more a { border-bottom: 1px solid rgba(227,189,115,.62); color: var(--brass-light); font-family: "Courier New", monospace; font-size: .75rem; font-weight: 700; letter-spacing: .09em; padding: .8rem 0; text-decoration: none; text-transform: uppercase; }
 .works-more a:hover { color: var(--paper-light); }
+.work-copy .work-title-link { color: inherit; font: inherit; letter-spacing: inherit; text-transform: none; }
+.work-copy .work-title-link:hover { color: var(--brass-light); }
+.work-title-link:focus-visible,.work-image-wrap:focus-visible { outline: 2px solid var(--brass-light); outline-offset: 5px; }
+.game-detail-content { padding-top: clamp(3rem,6vw,6rem); }
+.game-detail-page .more-project { border-top: 0; padding-top: 0; }
+.game-detail-page .more-project-copy h1 { font-size: clamp(2.6rem,5vw,4.5rem); font-weight: 400; letter-spacing: -.055em; line-height: .95; margin: 0; }
+.game-detail-page .more-project-controls h2 { color: #b7ae96; font-family: "Courier New", monospace; font-size: .66rem; font-weight: 400; letter-spacing: .1em; margin: 0 0 1rem; text-transform: uppercase; }
+.game-detail-page .more-project-controls dl { grid-template-columns: repeat(auto-fit,minmax(min(100%,15rem),1fr)); }
+.game-detail-page .more-project-videos h2,.game-gallery-title { color: var(--paper-light); font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 400; letter-spacing: -.03em; margin: 0 0 1.5rem; }
+.game-gallery-title { margin-top: clamp(2.5rem,5vw,4rem); }
+.game-detail-page .screenshot-carousel { margin-top: 0; }
+.game-related { border-top: 1px solid rgba(227,189,115,.28); margin-top: clamp(3rem,6vw,5rem); padding-top: 2rem; }
+.game-related p { color: #b7ae96; font-family: "Courier New", monospace; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+.game-related a { color: var(--brass-light); font-size: 1.3rem; text-underline-offset: .2em; }
 .more-projects-page { min-width: 0; }
 .more-projects-page .archive-hero h1 { max-width: none; }
 .more-projects-list { margin: 0 auto; max-width: 1140px; padding-bottom: clamp(4rem,8vw,7rem); width: 90vw; }

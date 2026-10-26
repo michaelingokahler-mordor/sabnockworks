@@ -27,6 +27,14 @@ The build uses Godot 4.5.1 Compatibility rendering without threads, so it does
 not require cross-origin isolation headers. The web export's existing checks
 are documented in the game repository.
 
+## Game information pages
+
+The information pages are `games/velvet-cruise/` and `games/emerald-hollows/`.
+Homepage images, titles and themed links lead to these pages. Each information
+page has a **Play the Game** link to the existing browser edition.
+Keep `games/more-projects/index.html` and its `#velvet-cruise` and
+`#emerald-hollows` anchors available for older external posts.
+
 ## Update Velvet Cruise
 
 The playable web edition lives at `games/more-projects/velvet-cruise/`.
