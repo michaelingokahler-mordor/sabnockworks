@@ -1,0 +1,15 @@
+{
+  "source": "michaelingokahler-mordor/Velvet-Cruise",
+  "commit": "89571ad307a6c1936426a60661be778f68ac57ae",
+  "onlineSourceCommit": "a82931246e8cc133f20dba9a084e6343a1e1d80c",
+  "modified": true,
+  "edition": "standalone",
+  "entry": "releases/2026-10-27-89571ad-coast-drive/_app/index-CnwrKWP0.js",
+  "onlineApi": "https://velvet-cruise-api.emerald-hollows.workers.dev",
+  "ruleset": "tour2",
+  "release": "2026-10-27-89571ad-coast-drive",
+  "assetsBase": "releases/2026-10-27-89571ad-coast-drive/",
+  "builtAt": "2026-10-27T18:26:05.135632+00:00",
+  "sourceClean": true,
+  "modifications": "Existing web-only online rankings adapter; game and artwork from the stated source commit."
+}
