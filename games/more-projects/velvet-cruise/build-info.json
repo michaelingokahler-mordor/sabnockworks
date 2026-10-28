@@ -1,15 +1,16 @@
 {
   "source": "michaelingokahler-mordor/Velvet-Cruise",
-  "commit": "89571ad307a6c1936426a60661be778f68ac57ae",
-  "onlineSourceCommit": "a82931246e8cc133f20dba9a084e6343a1e1d80c",
-  "modified": true,
-  "edition": "standalone",
-  "entry": "releases/2026-10-27-89571ad-coast-drive/_app/index-CnwrKWP0.js",
-  "onlineApi": "https://velvet-cruise-api.emerald-hollows.workers.dev",
-  "ruleset": "tour2",
-  "release": "2026-10-27-89571ad-coast-drive",
-  "assetsBase": "releases/2026-10-27-89571ad-coast-drive/",
-  "builtAt": "2026-10-27T18:26:05.135632+00:00",
+  "commit": "e07bc1564aa5f9b982fbacd7e51cb1c7fe8dca9b",
   "sourceClean": true,
-  "modifications": "Existing web-only online rankings adapter; game and artwork from the stated source commit."
+  "edition": "standalone",
+  "release": "2026-10-28-e07bc15-statistics",
+  "ruleset": "tour2",
+  "onlineApi": "https://velvet-cruise-api.emerald-hollows.workers.dev",
+  "status": "published",
+  "builtAt": "2026-10-28T14:15:52.197Z",
+  "entry": "releases/2026-10-28-e07bc15-statistics/_app/index-CjqzIZuu.js",
+  "assetsBase": "releases/2026-10-28-e07bc15-statistics/",
+  "statisticsEnabled": true,
+  "workerVersion": "b36981d9-e09b-42b8-a890-559619a72b73",
+  "publishedAt": "2026-10-28T14:23:03.6012648Z"
 }

@@ -41,8 +41,20 @@ The playable web edition lives at `games/more-projects/velvet-cruise/`.
 It includes its own assets and does not use the Tesana SDK.
 Scores and badges are saved in the player's browser.
 
-Keep the game source in a sibling `Velvet-Cruise` checkout with its dependencies installed.
-Build and copy the web edition:
+The current statistics release is `2026-10-28-e07bc15-statistics`, built from
+game commit `e07bc1564aa5f9b982fbacd7e51cb1c7fe8dca9b`. It includes the online
+adapter and anonymous load/start counters. The private report is served by
+the existing Cloudflare Worker at `/stats/`; its access key is a Worker
+secret and must never be copied into this repository.
+
+Publish reviewed immutable release directories and update only the wrapper
+index and build metadata. Keep earlier releases for cached pages. Production
+statistics require `VELVET_PRODUCTION_STATISTICS=1` during the standalone
+build. Follow `reports/statistics-2026-10-28/README.md` in the game repository
+for build, deployment and rollback details.
+
+The helper below is historical. It copies into the root and does not prepare
+the current immutable statistics release. Do not use it to replace this release:
 
 ```bash
 node tools/update-velvet-cruise.mjs ../Velvet-Cruise
@@ -52,9 +64,7 @@ This runs the game's TypeScript and local-storage checks before building.
 The generated `build-info.json` records the source commit and entry file.
 Previous hashed JavaScript files are retained for existing browser sessions.
 
-The current full release uses game commit `b5fdd7a` and the already published
-online adapter from `80bda527`. `build-info.json` records both revisions.
-The entry page selects `releases/2026-10-25-b5fdd7a/` through a relative base URL,
+The entry page selects `releases/2026-10-28-e07bc15-statistics/` through a relative base URL,
 so each release loads a matching atlas, metadata and scripts. Retain older root
 assets and release folders for cached pages. Current extended-tour records use
 the existing `tour2` keys and boards; legacy local records are not deleted or
