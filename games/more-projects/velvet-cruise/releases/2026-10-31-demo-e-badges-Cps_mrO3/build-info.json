@@ -1,0 +1,23 @@
+{
+  "source": "michaelingokahler-mordor/Velvet-Cruise",
+  "edition": "demo-e",
+  "release": "2026-10-31-demo-e-badges-Cps_mrO3",
+  "ruleset": "tour2",
+  "route": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "destination": "E",
+  "onlineRankings": false,
+  "statisticsEnabled": false,
+  "contentNotice": true,
+  "status": "published",
+  "entry": "releases/2026-10-31-demo-e-badges-Cps_mrO3/_app/index-Cps_mrO3.js",
+  "assetsBase": "releases/2026-10-31-demo-e-badges-Cps_mrO3/",
+  "commit": "da23919b0837020fe350c632bf161b97849bb3ff",
+  "trackedSourceClean": true,
+  "publishedAt": "2026-10-31T20:07:27.719Z"
+}

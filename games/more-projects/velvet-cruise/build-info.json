@@ -1,7 +1,7 @@
 {
   "source": "michaelingokahler-mordor/Velvet-Cruise",
   "edition": "demo-e",
-  "release": "2026-10-31-demo-e-rating-DR5aNprM",
+  "release": "2026-10-31-demo-e-badges-Cps_mrO3",
   "ruleset": "tour2",
   "route": [
     0,
@@ -15,9 +15,9 @@
   "statisticsEnabled": false,
   "contentNotice": true,
   "status": "published",
-  "entry": "releases/2026-10-31-demo-e-rating-DR5aNprM/_app/index-DR5aNprM.js",
-  "assetsBase": "releases/2026-10-31-demo-e-rating-DR5aNprM/",
-  "commit": "bcf1e5baa3f6ee2e04a696d425d3c4c710936afa",
+  "entry": "releases/2026-10-31-demo-e-badges-Cps_mrO3/_app/index-Cps_mrO3.js",
+  "assetsBase": "releases/2026-10-31-demo-e-badges-Cps_mrO3/",
+  "commit": "da23919b0837020fe350c632bf161b97849bb3ff",
   "trackedSourceClean": true,
-  "publishedAt": "2026-10-31T18:27:08.694Z"
+  "publishedAt": "2026-10-31T20:07:27.719Z"
 }
