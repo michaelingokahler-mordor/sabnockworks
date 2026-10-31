@@ -38,11 +38,11 @@ Keep `games/more-projects/index.html` and its `#velvet-cruise` and
 ## Update Velvet Cruise
 
 The playable web edition lives at `games/more-projects/velvet-cruise/`.
-It includes its own assets and does not use the Tesana SDK.
+It includes its own assets and uses the game-owned browser services.
 Scores and badges are saved in the player's browser.
 
-The current statistics release is `2026-10-28-e07bc15-statistics`, built from
-game commit `e07bc1564aa5f9b982fbacd7e51cb1c7fe8dca9b`. It includes the online
+The current independent runtime release is `2026-10-31-2f73c2f-independent-runtime`, built from
+game commit `2f73c2f624f84f27ccdb9c760143b9c2c7386d74`. It includes the online
 adapter and anonymous load/start counters. The private report is served by
 the existing Cloudflare Worker at `/stats/`; its access key is a Worker
 secret and must never be copied into this repository.
@@ -64,7 +64,7 @@ This runs the game's TypeScript and local-storage checks before building.
 The generated `build-info.json` records the source commit and entry file.
 Previous hashed JavaScript files are retained for existing browser sessions.
 
-The entry page selects `releases/2026-10-28-e07bc15-statistics/` through a relative base URL,
+The entry page selects `releases/2026-10-31-2f73c2f-independent-runtime/` through a relative base URL,
 so each release loads a matching atlas, metadata and scripts. Retain older root
 assets and release folders for cached pages. Current extended-tour records use
 the existing `tour2` keys and boards; legacy local records are not deleted or
