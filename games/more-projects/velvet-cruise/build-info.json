@@ -1,15 +1,23 @@
 {
   "source": "michaelingokahler-mordor/Velvet-Cruise",
-  "commit": "b7c8eb9f4c7b91e283abe437dfd33b6e9ed3a3ec",
-  "sourceClean": true,
-  "edition": "standalone",
-  "release": "2026-10-31-b7c8eb9-touch-loupe",
+  "edition": "demo-e",
+  "release": "2026-10-31-demo-e-rating-DR5aNprM",
   "ruleset": "tour2",
-  "onlineApi": "https://velvet-cruise-api.emerald-hollows.workers.dev",
+  "route": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "destination": "E",
+  "onlineRankings": false,
+  "statisticsEnabled": false,
+  "contentNotice": true,
   "status": "published",
-  "entry": "releases/2026-10-31-b7c8eb9-touch-loupe/_app/index-DPtqSv9-.js",
-  "assetsBase": "releases/2026-10-31-b7c8eb9-touch-loupe/",
-  "statisticsEnabled": true,
-  "workerVersion": "b36981d9-e09b-42b8-a890-559619a72b73",
-  "publishedAt": "2026-10-31T15:23:07.277Z"
+  "entry": "releases/2026-10-31-demo-e-rating-DR5aNprM/_app/index-DR5aNprM.js",
+  "assetsBase": "releases/2026-10-31-demo-e-rating-DR5aNprM/",
+  "commit": "bcf1e5baa3f6ee2e04a696d425d3c4c710936afa",
+  "trackedSourceClean": true,
+  "publishedAt": "2026-10-31T18:27:08.694Z"
 }

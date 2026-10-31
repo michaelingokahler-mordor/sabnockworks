@@ -12,8 +12,8 @@ Publisher: Sabnock Works, Germany
 - [Lathmar: The Fallen Depths](https://lathmar.de/): A dark fantasy dungeon crawler inspired by classic 1990s roleplaying games.
 - [War of the Wizards](https://sabnockworks.com/games/war-of-the-wizards/): Turn-based fantasy tactics inspired by Julian Gollop's Chaos, with 73 spells, creature summoning and illusion bluffs. Play the full browser version free while in development; feedback appreciated. A separate Windows demo and gameplay videos are also available.
 - [Routes of Africa](https://sabnockworks.com/games/routes-of-africa/): A historical expedition strategy game about exploration, route planning, documentation, and resource management in 19th-century North and Central Africa.
-- [Velvet Cruise](https://sabnockworks.com/games/velvet-cruise/): Game information, screenshots, controls and a Play the Game link for the pixel-art arcade driving game. Fifteen branching stages and five finish lines. Free to play while in development.
-- [Play Velvet Cruise](https://sabnockworks.com/games/more-projects/velvet-cruise/): The existing playable browser edition, with keyboard and touch controls and scores and badges saved in the browser.
+- [Velvet Cruise](https://sabnockworks.com/games/velvet-cruise/): Game information, screenshots and controls. Full version for Windows and Mac coming soon, with fifteen stages and five finish lines. Play the free browser demo to Ending E.
+- [Play the Velvet Cruise Demo](https://sabnockworks.com/games/more-projects/velvet-cruise/): Five coastal stages ending at Twilight Bay (Ending E). Keyboard and touch controls, local records, and an age/content notice before play.
 
 - [Lathmar: Emerald Hollows](https://sabnockworks.com/games/emerald-hollows/): Game information, controls and a Play the Game link for the cave action-puzzle game. Fifty caves, keyboard and touch controls, and English and German text. Free to play while in development.
 - [Play Lathmar: Emerald Hollows](https://sabnockworks.com/games/more-projects/emerald-hollows/): The existing playable browser edition.

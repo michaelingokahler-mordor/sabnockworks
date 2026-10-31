@@ -55,7 +55,7 @@ mkdirSync(output, { recursive: true });
     assert.ok((await track.locator('figure').nth(0).textContent()).includes('The garage'));
     assert.ok((await track.locator('figure').nth(1).textContent()).includes('The course map'));
     assert.equal(await article.locator('img').count(), 18);
-    assert.ok((await article.innerText()).includes('Free to play while in development.'));
+    assert.ok((await article.innerText()).includes('Soon available'));
     assert.ok((await article.innerText()).includes('Feedback appreciated.'));
     const hrefs = await article.locator('a').evaluateAll(links => links.map(link => link.href));
     assert.ok(hrefs.every(href => !/tesana\.com|585604|585605/.test(href)));
@@ -135,11 +135,12 @@ mkdirSync(output, { recursive: true });
     await mobilePage.screenshot({ path: output + '/mobile-section.png', fullPage: true });
 
     gamePage = page;
-    const play = article.getByRole('link', { name: 'Play online' });
+    const play = article.getByRole('link', { name: 'Play the Demo' });
     assert.equal(await play.getAttribute('href'), './velvet-cruise/');
     await play.click();
     assert.equal(new URL(page.url()).pathname, '/games/more-projects/velvet-cruise/');
-    await page.goto(page.url() + '#autopilot&sim=8');
+    await page.goto(base + '/games/more-projects/velvet-cruise/?qa=demo#autopilot&sim=8');
+    await page.getByRole('button', { name: 'Play the Demo', exact: true }).click();
     await page.waitForFunction(() => typeof window.__trackBench === 'function');
     for (let i = 0; i < 4; i++) { await page.keyboard.press('Enter'); await page.waitForTimeout(300); }
     await page.waitForFunction(() => window.__race?.state === 'race' && window.__race.kmh > 100);
@@ -150,6 +151,7 @@ mkdirSync(output, { recursive: true });
 
     // Exercise the actual touch menu and accelerator on a portrait phone.
     await mobilePage.goto(base + '/games/more-projects/velvet-cruise/#tumbletest');
+    await mobilePage.getByRole('button', { name: 'Play the Demo', exact: true }).tap();
     await mobilePage.waitForFunction(() => typeof window.__trackBench === 'function');
     const tap = async (x, y) => {
       const box = await mobilePage.locator('#game canvas').boundingBox();

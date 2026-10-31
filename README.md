@@ -31,63 +31,44 @@ are documented in the game repository.
 
 The information pages are `games/velvet-cruise/` and `games/emerald-hollows/`.
 Homepage images, titles and themed links lead to these pages. Each information
-page has a **Play the Game** link to the existing browser edition.
+page links to its browser edition. Velvet Cruise uses **Play the Demo**; Emerald Hollows uses **Play the Game**.
 Keep `games/more-projects/index.html` and its `#velvet-cruise` and
 `#emerald-hollows` anchors available for older external posts.
 
 ## Update Velvet Cruise
 
-The playable web edition lives at `games/more-projects/velvet-cruise/`.
-It includes its own assets and uses the game-owned browser services.
-Scores and badges are saved in the player's browser.
+The public browser game at `games/more-projects/velvet-cruise/` is the coastal
+**demo-e** edition. It has five stages ending at E. Its content notice appears
+before play, including direct URLs. Records stay local. Online leaderboards
+and game statistics are disabled in this demo.
 
-The current independent runtime release is `2026-10-31-2f73c2f-independent-runtime`, built from
-game commit `2f73c2f624f84f27ccdb9c760143b9c2c7386d74`. It includes the online
-adapter and anonymous load/start counters. The private report is served by
-the existing Cloudflare Worker at `/stats/`; its access key is a Worker
-secret and must never be copied into this repository.
+The Full Windows/Mac edition has all routes. Its information pages show
+**Soon available** and a **Play the Demo** link. Other games keep their own
+availability text.
 
-Publish reviewed immutable release directories and update only the wrapper
-index and build metadata. Keep earlier releases for cached pages. Production
-statistics require `VELVET_PRODUCTION_STATISTICS=1` during the standalone
-build. Follow `reports/statistics-2026-10-28/README.md` in the game repository
-for build, deployment and rollback details.
+Build the reviewed game source with `npm run check`, `npm test`,
+`npm run qa:demo` and `npm run build:demo`. Browser output is
+`output/web-demo-e/game`. Run the content-notice and route browser checks
+from the game repository before publishing.
 
-The helper below is historical. It copies into the root and does not prepare
-the current immutable statistics release. Do not use it to replace this release:
+Copy the complete reviewed browser output into a new immutable directory
+under `games/more-projects/velvet-cruise/releases/`. Retain its hashed scripts,
+CSS and assets together. Update the root game `index.html` with a relative
+`base` selecting that release. Record the exact game commit, release,
+entry file, `demo-e` edition and disabled online/statistics flags in
+`build-info.json`. Keep previous releases for cached sessions.
 
-```bash
-node tools/update-velvet-cruise.mjs ../Velvet-Cruise
-```
+`tools/update-velvet-cruise.mjs` is a historical Full updater. Do not use it
+for the public demo. It builds `standalone` and would replace the demo.
 
-This runs the game's TypeScript and local-storage checks before building.
-The generated `build-info.json` records the source commit and entry file.
-Previous hashed JavaScript files are retained for existing browser sessions.
+GitHub Pages publishes the website root from `main`. Publishing does not
+run game build tools. Verify the public information page, collection entry,
+button targets, direct start notice and demo route after deployment.
 
-The entry page selects `releases/2026-10-31-2f73c2f-independent-runtime/` through a relative base URL,
-so each release loads a matching atlas, metadata and scripts. Retain older root
-assets and release folders for cached pages. Current extended-tour records use
-the existing `tour2` keys and boards; legacy local records are not deleted or
-reinterpreted as scores under the new driving rules. The basic updater above
-requires a checkout that already includes the online adapter; do not replace
-this release with a local-only build.
+The existing Cloudflare Worker remains available for the purchased Full
+versions. Private report credentials must never enter this repository.
 
-To refresh the screenshots, run a local static server:
-
-```bash
-python -m http.server 8080 --bind 127.0.0.1
-```
-
-In the game checkout, run the capture tool with Chromium and Playwright available:
-
-```bash
-node tools/art/capture-web.cjs http://127.0.0.1:8080/games/more-projects/velvet-cruise/ ../sabnockworks/assets/media
-```
-
-The tool captures the title, garage, course map, and all fifteen stages.
-Review the images, then check the collection page on desktop and mobile.
-The site remains static; publishing does not run these tools.
-
-With the local server running, check the collection, links, assets, keyboard play,
-and touch controls with `node tools/check-velvet-cruise.cjs`.
-This check also needs Chromium and Playwright.
+With a local static server running, `node tools/check-velvet-cruise.cjs`
+checks the collection, assets, keyboard play and touch controls. It needs
+Playwright and Chromium. On Windows, set `CHROMIUM_PATH` to the Chrome
+executable if necessary.
