@@ -1,0 +1,15 @@
+{
+  "source": "michaelingokahler-mordor/Velvet-Cruise",
+  "commit": "f7dfdb55572c61292354dee6bd1e48fc95209f6e",
+  "sourceClean": true,
+  "edition": "standalone",
+  "release": "2026-10-31-f7dfdb5-mobile-controls",
+  "ruleset": "tour2",
+  "onlineApi": "https://velvet-cruise-api.emerald-hollows.workers.dev",
+  "status": "published",
+  "entry": "releases/2026-10-31-f7dfdb5-mobile-controls/_app/index-Bz83axwB.js",
+  "assetsBase": "releases/2026-10-31-f7dfdb5-mobile-controls/",
+  "statisticsEnabled": true,
+  "workerVersion": "b36981d9-e09b-42b8-a890-559619a72b73",
+  "publishedAt": "2026-10-31T15:00:20.360Z"
+}
