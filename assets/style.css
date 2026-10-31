@@ -169,6 +169,12 @@ footer { align-items: end; background: #0a0c0b; border-top: 1px solid rgba(227,1
 .more-project-playlist { aspect-ratio: 16 / 9; border: 0; display: block; height: auto; width: 100%; }
 .more-project-videos > p { margin: 1.25rem 0 0; }
 .more-project-videos > p a { color: var(--brass-light); font-family: "Courier New",monospace; font-size: .75rem; line-height: 1.6; text-underline-offset: .3em; }
+.game-age-summary { color: #d0c9b6; font-size: .95rem; line-height: 1.65; margin: 1rem 0 0; }
+.game-age-summary strong { color: var(--brass-light); font-weight: 700; }
+.game-age-details { border-top: 1px solid rgba(227,189,115,.28); margin-top: clamp(2.5rem,5vw,4rem); padding-top: 2rem; }
+.game-age-details h2 { color: var(--paper-light); font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 400; letter-spacing: -.03em; margin: 0 0 1.5rem; }
+.game-age-details > p { color: #d0c9b6; font-size: 1.05rem; line-height: 1.75; margin: 1.25rem 0 0; max-width: 76ch; }
+.game-age-details strong { color: var(--paper-light); }
 @media (max-width: 1100px) { .more-project-gallery.screenshot-carousel-track { grid-auto-columns: calc((100% - var(--screenshot-gap)) / 2); } }
 @media (max-width: 600px) { .screenshot-carousel { column-gap: .5rem; }.more-project-gallery.screenshot-carousel-track { grid-auto-columns: 100%; } }
 #velvet-cruise img { image-rendering: pixelated; }
