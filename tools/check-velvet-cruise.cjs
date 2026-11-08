@@ -55,7 +55,9 @@ mkdirSync(output, { recursive: true });
     assert.ok((await track.locator('figure').nth(0).textContent()).includes('The garage'));
     assert.ok((await track.locator('figure').nth(1).textContent()).includes('The course map'));
     assert.equal(await article.locator('img').count(), 18);
-    assert.ok((await article.innerText()).includes('Soon available'));
+    const shop = article.getByRole('link', { name: 'Buy on itch.io', exact: true });
+    assert.ok(await shop.isVisible(), 'The collection must offer a visible purchase link');
+    assert.equal(await shop.getAttribute('href'), 'https://sabnockworks.itch.io/velvet-cruise');
     assert.ok((await article.innerText()).includes('Feedback appreciated.'));
     const hrefs = await article.locator('a').evaluateAll(links => links.map(link => link.href));
     assert.ok(hrefs.every(href => !/tesana\.com|585604|585605/.test(href)));
@@ -133,6 +135,13 @@ mkdirSync(output, { recursive: true });
     assert.equal(await mobilePage.getByRole('button', { name: 'Previous screenshots' }).isEnabled(), true);
     await mobilePage.locator('[data-screenshot-carousel]').screenshot({ path: output + '/touch-carousel.png' });
     await mobilePage.screenshot({ path: output + '/mobile-section.png', fullPage: true });
+
+    await mobilePage.goto(base + '/games/velvet-cruise/' + version);
+    const mobileShop = mobilePage.getByRole('link', { name: 'Buy on itch.io', exact: true });
+    assert.ok(await mobileShop.isVisible(), 'The game page must offer a visible purchase link on mobile');
+    assert.equal(await mobileShop.getAttribute('href'), 'https://sabnockworks.itch.io/velvet-cruise');
+    assert.equal(await mobilePage.getByRole('link', { name: 'Play the Demo', exact: true }).getAttribute('href'), '../more-projects/velvet-cruise/');
+    assert.equal(await mobilePage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false);
 
     gamePage = page;
     const play = article.getByRole('link', { name: 'Play the Demo' });

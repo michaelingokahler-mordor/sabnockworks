@@ -42,9 +42,9 @@ The public browser game at `games/more-projects/velvet-cruise/` is the coastal
 before play, including direct URLs. Records stay local. Online leaderboards
 and game statistics are disabled in this demo.
 
-The Full Windows/Mac edition has all routes. Its information pages show
-**Soon available** and a **Play the Demo** link. Other games keep their own
-availability text.
+The full Windows and Mac edition has all routes. The game page and its
+collection entry link to the itch.io store with **Buy on itch.io** and the
+free browser demo with **Play the Demo**.
 
 Build the reviewed game source with `npm run check`, `npm test`,
 `npm run qa:demo` and `npm run build:demo`. Browser output is

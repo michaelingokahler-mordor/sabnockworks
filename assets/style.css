@@ -138,7 +138,8 @@ footer { align-items: end; background: #0a0c0b; border-top: 1px solid rgba(227,1
 .more-project-copy > p:not(.eyebrow) { color: #d0c9b6; font-size: 1.05rem; line-height: 1.65; margin: 1.25rem 0; }
 .more-project-copy > .more-project-deck { color: var(--brass-light); font-size: 1.2rem; font-style: italic; }
 .more-project-copy strong { color: var(--paper-light); font-weight: 400; }
-.more-project-actions { margin-top: 1.8rem; }
+.more-project-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+.more-project-actions > .game-age-summary { flex-basis: 100%; margin-top: .25rem; }
 .more-project-downloads { display: flex; flex-wrap: wrap; gap: .3rem 1.5rem; margin-top: .6rem; }
 .more-project-downloads a { align-items: center; color: var(--brass-light); display: inline-flex; font-family: "Courier New", monospace; font-size: .75rem; gap: .5rem; line-height: 1.5; min-height: 44px; text-underline-offset: .3em; }
 .more-project-controls { border-top: 1px solid rgba(227,189,115,.22); margin-top: 1.5rem; padding-top: 1.5rem; }
