@@ -57,7 +57,7 @@
         <h1 id="game-title">War of the Wizards</h1>
         <p>Command your wizard. Summon creatures.<br>Call an illusion, or face a very real dragon.</p>
         <p class="availability"><strong>Free to play while in development.</strong><br><a href="mailto:Lathmar@t-online.de?subject=War%20of%20the%20Wizards%20feedback">Feedback appreciated.</a></p>
-        <button id="play" type="button">Play now</button>
+        <button id="play" type="button" disabled>Play now</button>
         <progress id="progress" hidden aria-label="Game download"></progress>
         <p id="status" role="status" aria-live="polite">Full game · 2–8 wizards · AI or local shared-screen play</p>
         <a id="retry" href="">Reload and try again</a>
@@ -70,7 +70,7 @@
   <script src="index.js"></script>
   <script>
     'use strict';
-    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":32171848,"index.wasm":38034280},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":32171864,"index.wasm":38034280},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
     const stage = document.getElementById('stage');
     const canvas = document.getElementById('canvas');
     const welcome = document.getElementById('welcome');
@@ -139,6 +139,7 @@
         document.getElementById('retry').classList.add('visible');
       }
     });
+    play.disabled = false;
   </script>
 </body>
 </html>
