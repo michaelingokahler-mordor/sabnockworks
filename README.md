@@ -39,8 +39,8 @@ Keep `games/more-projects/index.html` and its `#velvet-cruise` and
 
 The public browser game at `games/more-projects/velvet-cruise/` is the coastal
 **demo-e** edition. It has five stages ending at E. Its content notice appears
-before play, including direct URLs. Records stay local. Online leaderboards
-and game statistics are disabled in this demo.
+before play, including direct URLs. Records stay local. The demo reports
+successful game loads and race starts to the protected Sabnock Works report.
 
 The full Windows and Mac edition has all routes. The game page and its
 collection entry link to the itch.io store with **Buy on itch.io** and the
@@ -55,7 +55,7 @@ Copy the complete reviewed browser output into a new immutable directory
 under `games/more-projects/velvet-cruise/releases/`. Retain its hashed scripts,
 CSS and assets together. Update the root game `index.html` with a relative
 `base` selecting that release. Record the exact game commit, release,
-entry file, `demo-e` edition and disabled online/statistics flags in
+entry file, `demo-e` edition and the online and statistics flags in
 `build-info.json`. Keep previous releases for cached sessions.
 
 `tools/update-velvet-cruise.mjs` is a historical Full updater. Do not use it

@@ -1,0 +1,24 @@
+{
+  "source": "michaelingokahler-mordor/Velvet-Cruise",
+  "edition": "demo-e",
+  "release": "2026-11-19-demo-e-statistics-CtbcI8PH",
+  "ruleset": "tour2",
+  "route": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "destination": "E",
+  "onlineRankings": false,
+  "statisticsEnabled": true,
+  "contentNotice": true,
+  "status": "published",
+  "entry": "releases/2026-11-19-demo-e-statistics-CtbcI8PH/_app/index-CtbcI8PH.js",
+  "assetsBase": "releases/2026-11-19-demo-e-statistics-CtbcI8PH/",
+  "commit": "c39352d1bafa08e88a88e7d6b7441c2aa4d7fc2d",
+  "trackedSourceClean": true,
+  "publishedAt": "2026-11-19T18:53:59.938Z",
+  "statisticsBackend": "shared-game-statistics"
+}

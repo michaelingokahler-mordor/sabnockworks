@@ -5,6 +5,7 @@ const SOURCE_LIFETIME_MS = 30 * 60 * 1000;
 const GAME_PATHS = {
   'war-of-the-wizards': '/games/war-of-the-wizards/play/',
   'emerald-hollows': '/games/more-projects/emerald-hollows/',
+  'velvet-cruise': '/games/more-projects/velvet-cruise/',
 };
 const HOSTNAME = /^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+(?:[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?)$/;
 

@@ -1,7 +1,7 @@
 {
   "source": "michaelingokahler-mordor/Velvet-Cruise",
   "edition": "demo-e",
-  "release": "2026-10-31-demo-e-badges-Cps_mrO3",
+  "release": "2026-11-19-demo-e-statistics-CtbcI8PH",
   "ruleset": "tour2",
   "route": [
     0,
@@ -12,12 +12,13 @@
   ],
   "destination": "E",
   "onlineRankings": false,
-  "statisticsEnabled": false,
+  "statisticsEnabled": true,
   "contentNotice": true,
   "status": "published",
-  "entry": "releases/2026-10-31-demo-e-badges-Cps_mrO3/_app/index-Cps_mrO3.js",
-  "assetsBase": "releases/2026-10-31-demo-e-badges-Cps_mrO3/",
-  "commit": "da23919b0837020fe350c632bf161b97849bb3ff",
+  "entry": "releases/2026-11-19-demo-e-statistics-CtbcI8PH/_app/index-CtbcI8PH.js",
+  "assetsBase": "releases/2026-11-19-demo-e-statistics-CtbcI8PH/",
+  "commit": "c39352d1bafa08e88a88e7d6b7441c2aa4d7fc2d",
   "trackedSourceClean": true,
-  "publishedAt": "2026-10-31T20:07:27.719Z"
+  "publishedAt": "2026-11-19T18:53:59.938Z",
+  "statisticsBackend": "shared-game-statistics"
 }
