@@ -8,3 +8,17 @@
   color: var(--brass-light, #e3bd73);
   text-underline-offset: .2em;
 }
+
+.wizards-essay {
+  margin: 0 auto clamp(3rem, 6vw, 5rem);
+  max-width: 1050px;
+  width: 90vw;
+}
+.wizards-essay > p {
+  max-width: 60ch;
+}
+@media (max-width: 840px) {
+  .wizards-essay {
+    width: calc(100% - 2.8rem);
+  }
+}
