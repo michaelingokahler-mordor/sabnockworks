@@ -29,6 +29,7 @@ Publisher: Sabnock Works, Germany
 - [Mythic Spears](https://sabnockworks.com/articles/mythic-spears/): Six essays by Michael Kahler about mythology, power, sacrifice, and legendary weapons.
 - [Ancient Mega Dungeons](https://sabnockworks.com/articles/ancient-mega-dungeons/): Complete illustrated reading edition of five essays on ancient labyrinths, sacred mountains, underground cities and sealed tombs, with sources and lessons for RPG design. PDF download available.
 - [Heinrich Barth: The Scholar Who Crossed Kingdoms](https://sabnockworks.com/articles/heinrich-barth/): Complete reading edition about Barth's life, journeys, collaborators and legacy, and the historical foundations of Routes of Africa. PDF download available.
+- [Why We Keep Remaking Chaos](https://sabnockworks.com/articles/chaos/): Essay 06 on Julian Gollop's ZX Spectrum game, fan remakes, and the Amiga origins of War of the Wizards. Also available [in German](https://sabnockworks.com/articles/chaos/de/).
 
 ## Dark Fantasy Fiction
 
