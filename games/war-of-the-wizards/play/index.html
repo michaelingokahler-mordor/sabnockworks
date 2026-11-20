@@ -70,7 +70,7 @@
   <script src="index.js"></script>
   <script>
     'use strict';
-    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":18024436,"index.wasm":38034280},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+    const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":2042828,"index.wasm":38034280},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
     const stage = document.getElementById('stage');
     const canvas = document.getElementById('canvas');
     const welcome = document.getElementById('welcome');
@@ -97,6 +97,39 @@
     // Keep the engine inside the space below the website toolbar, including
     // fullscreen. Adaptive mode sizes to the whole window instead of this area.
     const engine = new Engine(config);
+    // Stream the release-matched archive into Godot's memory filesystem without
+// draining the download one Godot frame at a time.
+function installWizardsMatchLoader(engine, executable) {
+  window.downloadWizardsMatch = async (name, size, retry, progress, complete) => {
+    try {
+      const url = new URL(name, new URL(executable, document.baseURI));
+      const response = await fetch(url, {cache: retry ? 'reload' : 'default'});
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      const reader = response.body.getReader();
+      const data = new Uint8Array(size);
+      let offset = 0;
+      let previous = -1;
+      for (;;) {
+        const {done, value} = await reader.read();
+        if (done) break;
+        data.set(value, offset);
+        offset += value.length;
+        const percent = Math.min(99, Math.floor(100 * offset / size));
+        if (percent !== previous) progress(percent);
+        previous = percent;
+      }
+      if (offset !== size) throw new Error('Incomplete match download');
+      engine.copyToFS('/tmp/wizards-match.zip', data);
+    } catch (error) {
+      console.warn('Match download:', error);
+      complete(false);
+      return;
+    }
+    complete(true);
+  };
+}
+
+installWizardsMatchLoader(engine, config.executable);
     const sizeObserver = new ResizeObserver(fitCanvas);
     sizeObserver.observe(stage);
     canvas.addEventListener('contextmenu', event => event.preventDefault());
@@ -117,7 +150,7 @@
         return;
       }
       progress.hidden = false;
-      status.textContent = 'Downloading the game. The first visit takes longer.';
+      status.textContent = 'Loading the title and game setup.';
       try {
         await engine.startGame({
           canvas,
@@ -126,7 +159,7 @@
             if (total > 0) {
               progress.max = total;
               progress.value = current;
-              status.textContent = 'Loading game · ' + Math.floor(current / total * 100) + '%';
+              status.textContent = 'Loading title and setup · ' + Math.floor(current / total * 100) + '%';
             }
           },
           onExit() {
