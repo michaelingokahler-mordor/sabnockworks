@@ -21,7 +21,7 @@ Publisher: Sabnock Works, Germany
 
 ## Tabletop Roleplaying Material
 
-- [Free d20 adventures and dungeon material](https://sabnockworks.com/tabletop/): Fifth-edition-compatible mythic weapons plus dungeon campaign material for d20 and Lathmar, including the Ancient Mega-Dungeons collection.
+- [Free d20 adventures and dungeon material](https://sabnockworks.com/tabletop/): Fifth-edition-compatible mythic weapons, Ancient Mega-Dungeons campaigns, and four Freyr adventures available in English and German.
 
 ## Essays
 
@@ -30,6 +30,7 @@ Publisher: Sabnock Works, Germany
 - [Ancient Mega Dungeons](https://sabnockworks.com/articles/ancient-mega-dungeons/): Complete illustrated reading edition of five essays on ancient labyrinths, sacred mountains, underground cities and sealed tombs, with sources and lessons for RPG design. PDF download available.
 - [Heinrich Barth: The Scholar Who Crossed Kingdoms](https://sabnockworks.com/articles/heinrich-barth/): Complete reading edition about Barth's life, journeys, collaborators and legacy, and the historical foundations of Routes of Africa. PDF download available.
 - [Why We Keep Remaking Chaos](https://sabnockworks.com/articles/chaos/): Essay 06 on Julian Gollop's ZX Spectrum game, fan remakes, and the Amiga origins of War of the Wizards. Also available [in German](https://sabnockworks.com/articles/chaos/de/).
+- [Freyr and the Gifts of the Gods](https://sabnockworks.com/articles/freyr/): Essay 07 follows Ingo, Ing and Freyr through six illustrated chapters. Read [in German](https://sabnockworks.com/articles/freyr/de/), download either essay PDF or find the [four companion adventures](https://sabnockworks.com/tabletop/#freyr-adventures) in both languages.
 
 ## Dark Fantasy Fiction
 
